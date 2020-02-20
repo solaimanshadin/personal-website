@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 38px;
+}
+
+p {
+    color: dimgray;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+img {
+    max-width: 100%;
+}
+
+section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.half-width {
+    width: 40%;
+    float: left;
+    margin-left: 5%;
+    padding-left: 2%;
+}
+
+.link-btn {
+    text-decoration: none;
+    background-image: linear-gradient(45deg, #ec5094, #ed4b6f);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: .3s all ease-in-out;
+}
+
+.link-btn:hover {
+    box-shadow: 0px 5px 10px #ed4c75;
+    transform: translateY(-2px);
+}
+
+.text-highlight {
+    color: crimson;
+}
+
+
+/* ====  Intro area  ====*/
+
+.intro-area {
+    background-image: url(images/header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro,
+.biography {
+    margin-top: 100px;
+}
+
+
+/* ==== Biography area ==== */
+
+.biography-area {
+    background-image: url(images/biography-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* ==== Work area ====*/
+
+.work-area {
+    background-image: url(images/latest-work-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.works {
+    padding: 0 8%;
+}
+
+.work-area h2 {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.work-area .works .single-work {
+    float: left;
+    width: 31%;
+    padding: 0 1.1%;
+}
+
+
+/* ====  Tetimonial area ==== */
+
+.testimonial-area {
+    text-align: center;
+    background-image: url(images/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testimonial-area .single-testimonial {
+    margin-bottom: 75px;
+    margin-top: 50px;
+}
+
+.testimonial-area .single-testimonial .quote {
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.testimonial-area .quote::before,
+.testimonial-area .quote::after {
+    content: '"';
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    background-image: linear-gradient(54deg, crimson, fuchsia);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.contact-info p {
+    color: white;
+}
+
+
+/* ====  Footer   ==== */
+
+footer p {
+    text-align: center;
+}
+
+
+/* Reponsive CSS */
+
+@media screen and (max-width:776px) {
+    .intro-area img,
+    .biography-area img {
+        max-width: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+    section,
+    .works {
+        padding: 0;
+    }
+    .half-width,
+    .single-work {
+        margin: 0;
+        padding: 5% !important;
+        width: 90% !important;
+        float: none;
+        clear: both;
+    }
+    .quote,
+    .contact-info,
+    footer {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .contact-info h2 {
+        font-size: 20px;
+    }
+}
