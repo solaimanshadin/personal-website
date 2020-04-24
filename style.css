@@ -1,298 +1,257 @@
-body {
+body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+*{
+    transition: .3s ease-in-out;
 
-h1 {
+}
+h1{
     font-size: 50px;
 }
-
 h2 {
     font-weight: 500;
     font-size: 38px;
 }
 
-p {
-    color: dimgray;
-    font-size: 16px;
-    line-height: 1.8;
+p{
+    color: dimgrey;
+    line-height: 2em;
 }
-
-img {
+a{
+    text-decoration: none;
+}
+img{
     max-width: 100%;
 }
-
-section {
-    padding: 100px 0;
-    overflow: hidden;
+.text-primary{
+    color: crimson;
 }
-
-.half-width {
-    width: 40%;
-    float: left;
-    margin-left: 5%;
-    padding-left: 2%;
-}
-
-.link-btn {
-    text-decoration: none;
+.btn-primary{
     background-image: linear-gradient(45deg, #ec5094, #ed4b6f);
-    color: white;
+    color: #ffffff;
     padding: 10px 30px;
     border-radius: 5px;
+    text-transform: uppercase;
     display: inline-block;
     margin-top: 20px;
-    transition: .3s all ease-in-out;
 }
-
-.link-btn:hover {
+.btn-primary:hover{
     box-shadow: 0px 5px 10px #ed4c75;
     transform: translateY(-2px);
 }
-
-.text-highlight {
-    color: crimson;
+.half-width{
+    width: 40%;
+    margin-left: 5%;
+    padding-left: 2%;
+}
+.section-title{
+    text-align: center;
+}
+section{
+    padding: 75px 0;
 }
 
-
-/* ====  Intro area  ====*/
-
-.intro-area {
+#hero-area,
+#biography,
+#experience-area .experiences,
+#work-area .works{
+    display: flex;
+    align-items: center;
+}
+#hero-area{
     background-image: url(images/header-bg.png);
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
 }
-
-.intro,
-.biography {
-    margin-top: 100px;
-}
-
-
-/* ==== Biography area ==== */
-
-.biography-area {
+#biography{
     background-image: url(images/biography-bg.png);
     background-repeat: no-repeat;
-    background-size: cover;
 }
-
-
-/* ==== Experience area ====*/
-
-.experience-area {
+/* ==== Experience area ==== */
+#experience-area{
     background-image: url(images/experience-bg.png);
-    background-repeat: no-repeat;
+    background-position: left top;
     background-size: cover;
-    padding-bottom: 50px;
+    background-repeat: no-repeat;
+}
+#experience-area .xp-cat{
+    display: flex;
+    align-items: center;
 }
 
-.experience-cat-name i {
+#experience-area .xp-cat i{
     color: crimson;
-    font-size: 20px;
+    margin-right: 10px;
+    font-size: 1.2em;
 }
-
-.experience-cat-name h3 {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.experience-area h2 {
-    text-align: center;
-}
-
-.experience-area .single-experience h4 {
-    margin-bottom: 5px;
-}
-
-.experience-area .single-experience .text-highlight {
-    margin-top: 0;
-}
-
-.experience-area .single-experience {
-    padding-left: 50px;
+#experience-area .experiences .single-xp{
     border-left: 2px solid crimson;
+    padding-left: 30px;
     position: relative;
 }
-
-.experience-area .single-experience::before {
-    position: absolute;
-    left: -9px;
-    top: 40%;
+#experience-area .single-xp::before{
     content: "";
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background-color: crimson;
+    background: crimson;
+    position: absolute;
+    top: calc(50% - 9px);
+    left: -9px;
 }
+#experience-area .single-xp:hover::before{
+    animation: heart-beat 1s ease-in  infinite ;
 
-.experience-area .single-experience:hover::before {
-    animation: pulse 1s ease-in infinite;
 }
-
-@keyframes pulse {
-    0% {
+@keyframes heart-beat{
+    0%{
         transform: scale(1);
     }
-    50% {
+    50%{
         transform: scale(1.3);
     }
-    100% {
+    100%{
         transform: scale(1);
     }
 }
-
-
-/* ==== Work area ====*/
-
-.work-area {
-    background-image: url(images/latest-work-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+#experience-area .single-xp .text-primary {
+    margin: 0;
+    line-height: 0;
 }
 
-.works {
+/* ==== Work Area ==== */
+#work-area {
+    background-image: url(images/latest-work-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#work-area .works{
     padding: 0 7%;
 }
-
-.work-area h2 {
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.work-area .works .single-work {
-    float: left;
-    width: 31%;
-    margin: 0 1.1%;
+#work-area .single-work{
+    width: 30%;
+    margin: 1.5%;
     position: relative;
-}
+    cursor: pointer;
 
-.work-on-hover {
+}
+#work-area .single-work .work-psudo{
     display: none;
 }
-
-.work-area .works .single-work:hover .work-on-hover {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(70, 70, 70, 0.31);
-    color: white;
-}
-
-.work-area .works .work-on-hover a {
+#work-area .single-work .work-psudo a{
     color: white;
     display: block;
     text-align: center;
-    padding-top: 35%;
     font-size: 30px;
 }
+#work-area .single-work:hover .work-psudo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    
+}
+/* ==== TEstimonial and Contact ==== */
 
-
-/* ====  Tetimonial area ==== */
-
-.testimonial-area {
+.testimonial-and-contact{
     text-align: center;
+    padding: 0 8%;
     background-image: url(images/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: left top ;
 }
-
-.testimonial-area .single-testimonial {
-    margin-bottom: 75px;
-    margin-top: 50px;
-}
-
-.testimonial-area .single-testimonial .quote {
-    max-width: 600px;
+.testimonial-and-contact> *{
+    max-width: 620px;
     margin: 0 auto;
-    font-weight: bold;
 }
 
-.testimonial-area .quote::before,
-.testimonial-area .quote::after {
-    content: '"';
+.testimonial-and-contact .quote{
+    font-weight: 600;
 }
-
-.contact-info {
-    max-width: 600px;
-    margin: 0 auto;
-    background-image: linear-gradient(54deg, crimson, fuchsia);
-    color: white;
-    padding: 20px;
+.contact .email-card p{
+    color: #ffffff;
+}
+.contact .email-card{
+    background-image:  linear-gradient(54deg, crimson, fuchsia) ;
+    color: #ffffff;
+    padding: 30px 10px;
     border-radius: 15px;
+    margin: 70px 0;
 }
-
-.contact-info p {
-    color: white;
-}
-
-.social-media {
-    margin-top: 70px;
-}
-
-.social-media a {
-    display: inline-block;
-    color: dimgray;
-    width: 35px;
-    height: 35px;
-    margin: 2px;
-    font-size: 18px;
+.contact .social-medias  i {
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    text-align: center;
     border: 1px solid dimgray;
-    transition: .3s all ease-in-out;
+    color: dimgray;
+    padding: 10px;
+    margin: 3px;
+}
+.contact .social{
+    margin-bottom: 75px;
+}
+.contact .social-medias  i:hover{
+    background-color: crimson;
+    border-color:crimson;
+    color: #ffffff;
 }
 
-.social-media a:hover {
-    background: crimson;
-    border-color: crimson;
-    color: white;
-}
-
-.social-media i {
-    padding-top: 10px;
-}
-
-
-/* ====  Footer   ==== */
-
-footer p {
+/* ==== Footer ==== */
+footer{
     text-align: center;
 }
 
-
-/* Reponsive CSS */
-
-@media screen and (max-width:776px) {
-    .intro-area img,
-    .biography-area img {
-        max-width: 200px;
-        display: block;
-        margin: 0 auto;
+@media (max-width:777px){
+    h1{
+        font-size: 40px;
     }
-    section,
-    .works {
+    section{
+        padding: 35px 0;
+    }
+    #hero-area,
+    #biography,
+    #experience-area .experiences,
+    #work-area .works{
+        flex-direction: column;
+        overflow: hidden;
+    }
+    #biography .bio-pic{
+        display: none;
+    }
+    .half-width img{
+        max-width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+    #experience-area{
+        background-image: unset;
+    }
+    
+    .half-width ,
+    #work-area .single-work{
+        width:  calc(100% - 10%);
+        padding: 5%;
+        margin: 0;
+    }
+    #work-area .single-work{
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    #work-area  .works{
         padding: 0;
     }
-    .half-width,
-    .single-work {
-        margin: 0;
-        padding: 5% !important;
-        width: 90% !important;
-        float: none;
-        clear: both;
-    }
-    .quote,
-    .contact-info,
-    footer {
-        width: 80%;
-        margin: 0 auto;
-    }
-    .contact-info h2 {
+    .contact .email-card h2{
         font-size: 20px;
+    }
+
+    .order-2{
+        order: 2;
     }
 }
